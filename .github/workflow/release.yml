@@ -1,14 +1,20 @@
-changelog:
-  categories:
-    - title: Breaking Changes 🛠
-      labels:
-        - breaking-change
-    - title: Exciting New Features 🎉
-      labels:
-        - enhancement
-    - title: Dependencies
-      labels:
-        - dependencies
-    - title: Other Changes
-      labels:
-        - "*"
+name: git-issue-release
+
+on:
+  push:
+    branches:
+      - main
+  release:
+    types: [released]
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-issue-release
+        uses: kouki-dan/git-issue-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release-tag-pattern: ^v
+          release-label: "release"
