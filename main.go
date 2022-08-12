@@ -9,4 +9,6 @@ func main() {
 	fmt.Println("hello world DMM")
 	fmt.Println("hello world ryusei")
 	fmt.Println("hello world DMM")
+	fmt.Println("hello world ryusei")
+	fmt.Println("hello world DMM")
 }
